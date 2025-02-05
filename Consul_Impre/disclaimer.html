@@ -1,0 +1,547 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turning Point - Payroll Outsourcing Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #663399;
+            --secondary: #8e44ad;
+            --accent: #9b59b6;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+            .top-nav-links a {
+                color: white;
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s;
+            }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+            .social-icons a {
+                color: white;
+            }
+
+        /* Main Navigation */
+        .main-nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 180px;
+        }
+
+            .logo img {
+                width: 100%;
+                height: auto;
+            }
+
+        .main-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-menu-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+            .main-menu-item > a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            .main-menu-item:hover > a {
+                color: var(--accent);
+            }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(102, 51, 153, 0.9), rgba(102, 51, 153, 0.9)), url('/api/placeholder/1920/600') center/cover;
+            padding: 4rem 2rem;
+            color: white;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                animation: fadeInDown 1s ease;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 800px;
+                margin: 0 auto;
+                animation: fadeInUp 1s ease;
+            }
+
+        /* Content Sections */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+            .benefit-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .benefit-card h3 {
+                color: var(--primary);
+                margin-bottom: 1rem;
+            }
+
+        /* Services Section */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+            .service-item:hover {
+                background: var(--primary);
+                color: white;
+            }
+
+        /* Data Security Section */
+        .security-features {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .security-list {
+            list-style: none;
+        }
+
+            .security-list li {
+                margin-bottom: 1rem;
+                padding-left: 2rem;
+                position: relative;
+            }
+
+                .security-list li::before {
+                    content: '♦';
+                    color: var(--primary);
+                    position: absolute;
+                    left: 0;
+                }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+            .footer-links li {
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-links a {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .footer-links a:hover {
+                    color: var(--accent);
+                }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .main-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-links">
+            <a href="/WebSite/F1/Consul_Impre/about.html">About Us</a>
+            <a href="/WebSite/F1/Consul_Impre/clients.html">Our Clients</a>
+
+            <a href="/WebSite/F1/Consul_Impre/disclaimer.html">Disclaimer</a>
+            <a href="/WebSite/F1/Consul_Impre/contact.html">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="www.instagram.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="www.x.com"><i class="fab fa-twitter"></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/api/placeholder/180/60" alt="Company Logo">
+            </div>
+            <div class="main-menu">
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/index.html">PAYROLL OUTSOURCING</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/legal.html">LEGAL SUPPORT</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/hr.html">HUMAN RESOURCES</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/compliance.html">STATUTORY COMPLIANCES</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>Website Disclaimer Notice</h1>
+        <p>The following terms and conditions are deemed to have been accepted by the User on usage of the website www.tpconsultants.com. The terms "You" and "User" refer to all individuals and/or entities accessing this site for any reason.</p>
+    </section>
+
+    <!-- About Using This Website Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">About Using This Website</h2>
+            <p>By using this website you are accepting all the terms of this disclaimer notice. If you do not agree with anything in this notice you should not use this website.</p>
+        </div>
+    </section>
+
+    <!-- Warranties and Liability Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">Warranties and Liability</h2>
+            <p>While every effort is made to ensure that the content of this website is accurate, the website is provided "as is" and www.tpconsultants.com TURNING POINT MANPOWER CONSULTANTS PRIVATE LTD / TURNING POINT CONSULTANTS makes no representations or warranties in relation to the accuracy or completeness of the information found on it.</p>
+            <p>While the content of this site is provided in good faith, we do not warrant that the information will be kept up to date. The website may contain inaccuracies, typographical and clerical errors, though efforts have been made to ensure accuracy.</p>
+        </div>
+    </section>
+
+    <!-- Breach of Confidentiality Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Breach of Confidentiality & Accidental Breach of Confidentiality</h2>
+            <p>This website/email and any files transmitted with it are confidential and intended solely for the use of the individual or entity to whom they are addressed. If you have received this email in error please notify the system manager. This message contains confidential information and is intended only for the individual named. If you are not the named addressee you should not disseminate, distribute or copy this e-mail. Please notify the sender immediately by e-mail if you have received this e-mail by mistake and delete this e-mail from your system.</p>
+        </div>
+    </section>
+
+    <!-- Entering into Contracts Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">Entering into Contracts</h2>
+            <p>No employee or agent is authorized to conclude any binding agreement on behalf of TURNING POINT MANPOWER CONSULTANTS PRIVATE LTD / TURNING POINT CONSULTANTS with another party by email without express written confirmation by a Supervisor or Director.</p>
+        </div>
+    </section>
+
+    <!-- Negligent Misstatement Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Negligent Misstatement</h2>
+            <p>Our company accepts no liability for the content of this email, or for the consequences of any actions taken on the basis of the information provided, unless that information is subsequently confirmed in writing.</p>
+        </div>
+    </section>
+
+    <!-- Employer's Liability Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">Employer's Liability</h2>
+            <p>Any views or opinions presented in this email are solely those of the author and do not necessarily represent those of the company. Employees of TURNING POINT CONSULTANTS are expressly required not to make defamatory statements and not to infringe or authorize any infringement of copyright or any other legal right by email communications.</p>
+        </div>
+    </section>
+
+    <!-- No Warranties Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">No Warranties</h2>
+            <p>We do not warrant that the servers that make this website available will be error, virus or bug free, and you accept that it is your responsibility to make adequate provision for protection against such threats. We recommend scanning any files before downloading.</p>
+        </div>
+    </section>
+
+    <!-- No Liability Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">No Liability</h2>
+            <p>In no event will www.tpconsultants.com TURNING POINT MANPOWER CONSULTANTS PRIVATE LTD / TURNING POINT CONSULTANTS be liable for any incidental, indirect, consequential or special damages of any kind, or any damages whatsoever, including, without limitation, those resulting from loss of profit, loss of contracts, goodwill, data, information, income, anticipated savings or business relationships, whether or not advised of the possibility of such damage, arising out of or in connection with the use of this website or any linked websites.</p>
+        </div>
+    </section>
+
+    <!-- Exceptions Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Exceptions</h2>
+            <p>Nothing in this disclaimer notice excludes or limits any warranty implied by law for death, fraud, personal injury through negligence, or anything else which it would not be lawful for www.tpconsultants.com TURNING POINT MANPOWER CONSULTANTS PRIVATE LTD / TURNING POINT CONSULTANTS to exclude.</p>
+        </div>
+    </section>
+
+    <!-- License to Use This Website Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">Licence to Use This Website</h2>
+            <p>By using this website you agree to the exclusions and limitations of liability stated above and accept them as reasonable. Do not use this website if you do not agree that they are reasonable.</p>
+        </div>
+    </section>
+
+    <!-- Material on Website Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Material on This Website</h2>
+            <p>Material on this website, including text and images, is protected by copyright law and is copyright to www.tpconsultants.com TURNING POINT MANPOWER CONSULTANTS PRIVATE LTD / TURNING POINT CONSULTANTS unless credited otherwise. It may not be copied, reproduced, republished, downloaded, posted, broadcast or transmitted in any way except for your own personal, non-commercial use.</p>
+        </div>
+    </section>
+
+    <!-- Links to Other Websites and Products Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">Links to Other Websites and Products</h2>
+            <p>Links to other websites are provided for the convenience of users. We are unable to provide any warranty regarding the accuracy or completeness of the content of such sites, or the reliability, quality or effectiveness of any products provided through external websites. A link to an external site does not imply an endorsement of the views, information or products provided or held by such websites.</p>
+        </div>
+    </section>
+
+    <!-- Law and Jurisdiction Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Law and Jurisdiction</h2>
+            <p>This disclaimer notice shall be interpreted and governed by English law, and any disputes in relation to it are subject to the jurisdiction of the courts in Kolkata, West Bengal only.</p>
+        </div>
+    </section>
+
+    <!-- Variations Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">Variations</h2>
+            <p>We reserve the right to revise and amend this disclaimer notice from time to time and any revised version will be deemed to be applicable from the first date of publication on this website.</p>
+        </div>
+    </section>
+
+    <!-- Indemnity Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">Indemnity</h2>
+            <p>Users agree to indemnify and hold www.tpconsultants.com and its subsidiaries, affiliates, officers, agents, co-branders or other partners and employees, harmless from any claim or demand, including reasonable attorneys' fees made by any third party due to the content you submit, post or transmit through the Service, your use of the Service, your connection to the Service, your violation of the Terms and Conditions, or your violation of any rights of another user and any third party claims.</p>
+        </div>
+    </section>
+
+    <!-- Intellectual Property Rights Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">Intellectual Property Rights</h2>
+            <p>All Intellectual property rights are vested solely with www.tpconsultants.com. No part of the webpage/service shall be reproduced or transmitted or stored in any other website, nor may any of its information or part thereof be disseminated in any electronic or non-electronic form, nor included in any public or private electronic retrieval system or service without obtaining prior written permission from www.tpconsultants.com. Any infringement in this regard shall be adequately compensated by the User.</p>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">About Us</h2>
+            <p>www.tpconsultants.com TURNING POINT MANPOWER CONSULTANTS PRIVATE LTD / TURNING POINT CONSULTANTS.</p>
+        </div>
+    </section>
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>WHAT WE DO</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Payroll Outsourcing</a></li>
+                    <li><a href="#">Legal Support Outsourcing</a></li>
+                    <li><a href="#">Human Resource Services</a></li>
+                    <li><a href="#">Statutory Compliance Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CORPORATE HEAD OFFICE</h3>
+                <p>
+                    1 R.N.Mukherjee Road<br>
+                    "Martin Burn House"<br>
+                    3rd Floor, Room No. 324,<br>
+                    Kolkata - 700 001<br>
+                    Phone No. +91-33-4000-7427<br>
+                    Email: suggestion@tpconsultants.com
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>REGIONAL OFFICES</h3>
+                <ul class="footer-links">
+                    <li><a href="#">New Delhi</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                    <li><a href="#">Nagpur</a></li>
+                    <li><a href="#">Ramagundan</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Hyderabad</a></li>
+                    <li><a href="#">Ahmedabad</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-car

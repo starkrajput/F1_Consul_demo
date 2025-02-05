@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turning Point - Payroll Outsourcing Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #663399;
+            --secondary: #8e44ad;
+            --accent: #9b59b6;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+            .top-nav-links a {
+                color: white;
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s;
+            }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+            .social-icons a {
+                color: white;
+            }
+
+        /* Main Navigation */
+        .main-nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 180px;
+        }
+
+            .logo img {
+                width: 100%;
+                height: auto;
+            }
+
+        .main-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-menu-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+            .main-menu-item > a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            .main-menu-item:hover > a {
+                color: var(--accent);
+            }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(102, 51, 153, 0.9), rgba(102, 51, 153, 0.9)), url('/api/placeholder/1920/600') center/cover;
+            padding: 4rem 2rem;
+            color: white;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                animation: fadeInDown 1s ease;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 800px;
+                margin: 0 auto;
+                animation: fadeInUp 1s ease;
+            }
+
+        /* Content Sections */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+            .benefit-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .benefit-card h3 {
+                color: var(--primary);
+                margin-bottom: 1rem;
+            }
+
+        /* Services Section */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+            .service-item:hover {
+                background: var(--primary);
+                color: white;
+            }
+
+        /* Data Security Section */
+        .security-features {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .security-list {
+            list-style: none;
+        }
+
+            .security-list li {
+                margin-bottom: 1rem;
+                padding-left: 2rem;
+                position: relative;
+            }
+
+                .security-list li::before {
+                    content: '♦';
+                    color: var(--primary);
+                    position: absolute;
+                    left: 0;
+                }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+            .footer-links li {
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-links a {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .footer-links a:hover {
+                    color: var(--accent);
+                }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .main-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-links">
+            <a href="/WebSite/F1/Consul_Impre/about.html">About Us</a>
+            <a href="/WebSite/F1/Consul_Impre/clients.html">Our Clients</a>
+
+            <a href="/WebSite/F1/Consul_Impre/disclaimer.html">Disclaimer</a>
+            <a href="/WebSite/F1/Consul_Impre/contact.html">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="www.instagram.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="www.x.com"><i class="fab fa-twitter"></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/api/placeholder/180/60" alt="Company Logo">
+            </div>
+            <div class="main-menu">
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/index.html">PAYROLL OUTSOURCING</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/legal.html">LEGAL SUPPORT</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/hr.html">HUMAN RESOURCES</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/compliance.html">STATUTORY COMPLIANCES</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- Clients Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">OUR EXISTING CORPORATE CLIENTS</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>PEPSICO INDIA HOLDINGS (P) LTD</li>
+                    <li>TIL LTD</li>
+                    <li>TIPL LTD (CATERPILLAR)</li>
+                    <li>CLEARING CORPN OF INDIA LTD (CCIL)</li>
+                    <li>MARATHON ELECTRIC - REGAL BELOIT</li>
+                    <li>BUREAU VERITAS</li>
+                    <li>CAFÉ COFFEE DAY</li>
+                    <li>ADITYA BIRLA RETAIL (ABRL)</li>
+                    <li>GODREJ NATURE BASKET</li>
+                    <li>VOLVO EICHER COMMERCIAL VEHICLES INDIA LTD</li>
+                    <li>GMMCO LTD</li>
+                    <li>CK BIRLA GROUP</li>
+                    <li>MAHINDRA DEFENCE (MAHINDRA & MAHINDRA GROUP)</li>
+                    <li>HNI BP ERGO</li>
+                    <li>SEPCO III</li>
+                    <li>HYUNDAI CONSTRUCTION EQUIPMENT INDIA PVT LTD</li>
+                    <li>HDFC LTD</li>
+                    <li>HDFC RED LTD</li>
+                    <li>HDFC SALES LTD</li>
+                    <li>HDFC DEVELOPERS LTD</li>
+                    <li>UB DIAGGIO GROUP</li>
+                    <li>L&T GROUP-RPO PROCESS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banking/NBFC/Financial Segment Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">BANKING/NBFC/FINANCIAL SEGMENT</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>HDFC GROUP</li>
+                    <li>INDUSIND BANK</li>
+                    <li>KOTAK BANK</li>
+                    <li>STANDARD CHARTERED</li>
+                    <li>AXIS</li>
+                    <li>ICICI SECURITIES</li>
+                    <li>SBI GENERAL INSURANCE</li>
+                    <li>HDFC ERGO</li>
+                    <li>SBI CAPITAL</li>
+                    <li>CLEARING CORPN OF INDIA LTD</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- EPC/Energy/Power/Mining Segment Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">EPC/ENERGY/POWER/MINING SEGMENT</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>SEMAC CONSULTING</li>
+                    <li>NIPPON STEEL</li>
+                    <li>L&T GROUP</li>
+                    <li>FEEDBACK INFRA</li>
+                    <li>TATA POWER</li>
+                    <li>HINDUJA POWER</li>
+                    <li>SANDVIK</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- IT/IT-ES Segment Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">IT/IT-ES SEGMENT</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>FUJITSU CONSULTING</li>
+                    <li>DELOITTE</li>
+                    <li>INFRASOFT</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Retail/Ecommerce/Media Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">RETAIL/ECOMMERCE/MEDIA</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>ADITYA BIRLA RETAIL</li>
+                    <li>GODREJ NATURE BASKET</li>
+                    <li>BOMBAY DYEING (WADIA GROUP)</li>
+                    <li>NOEL TATA GROUP</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Automobile/OEM Segment Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">AUTOMOBILE/OEM SEGMENT</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>TATA AUTOCOMP</li>
+                    <li>CK BIRLA GROUP</li>
+                    <li>MAHINDRA DEFENCE (MAHINDRA GROUP)</li>
+                    <li>TIL LTD</li>
+                    <li>TIPL LTD</li>
+                    <li>DOOSAN</li>
+                    <li>VOLVO EICHER COMMERCIAL VEHICLE</li>
+                    <li>MITSUBISHI ELECTRIC</li>
+                    <li>INDIAN SYNTHETIC RUBBER</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consulting Segment Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">CONSULTING SEGMENT</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>BUREAU VERTITAS</li>
+                    <li>INTERTEK</li>
+                    <li>COWI INDIA</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modular Furniture / Glass Segment Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">MODULAR FURNITURE / GLASS SEGMENT</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>HNI BP ERGO</li>
+                    <li>ASAHI GLASS</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- FMCG/FMCD Segment Section -->
+    <section class="section">
+        <div class="section-container">
+            <h2 class="section-title">FMCG/FMCD SEGEMENT</h2>
+            <div class="clients-list">
+                <ul>
+                    <li>RICH GRAVIS</li>
+                    <li>PERFETTI</li>
+                    <li>UB DIAGGIO GROUP</li>
+                    <li>XALTA FOOD</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>WHAT WE DO</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Payroll Outsourcing</a></li>
+                    <li><a href="#">Legal Support Outsourcing</a></li>
+                    <li><a href="#">Human Resource Services</a></li>
+                    <li><a href="#">Statutory Compliance Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CORPORATE HEAD OFFICE</h3>
+                <p>
+                    1 R.N.Mukherjee Road<br>
+                    "Martin Burn House"<br>
+                    3rd Floor, Room No. 324,<br>
+                    Kolkata - 700 001<br>
+                    Phone No. +91-33-4000-7427<br>
+                    Email: suggestion@tpconsultants.com
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>REGIONAL OFFICES</h3>
+                <ul class="footer-links">
+                    <li><a href="#">New Delhi</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                    <li><a href="#">Nagpur</a></li>
+                    <li><a href="#">Ramagundan</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Hyderabad</a></li>
+                    <li><a href="#">Ahmedabad</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-car

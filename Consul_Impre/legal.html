@@ -1,0 +1,602 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Turning Point - Payroll Outsourcing Services</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #663399;
+            --secondary: #8e44ad;
+            --accent: #9b59b6;
+            --light: #f8f9fa;
+            --dark: #1a1a1a;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Top Navigation */
+        .top-nav {
+            background: var(--primary);
+            padding: 0.5rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .top-nav-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+            .top-nav-links a {
+                color: white;
+                text-decoration: none;
+                font-size: 0.9rem;
+                transition: color 0.3s;
+            }
+
+        .social-icons {
+            display: flex;
+            gap: 1rem;
+        }
+
+            .social-icons a {
+                color: white;
+            }
+
+        /* Main Navigation */
+        .main-nav {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            width: 180px;
+        }
+
+            .logo img {
+                width: 100%;
+                height: auto;
+            }
+
+        .main-menu {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .main-menu-item {
+            position: relative;
+            padding: 0.5rem 1rem;
+        }
+
+            .main-menu-item > a {
+                color: var(--primary);
+                text-decoration: none;
+                font-weight: 500;
+                transition: color 0.3s;
+            }
+
+            .main-menu-item:hover > a {
+                color: var(--accent);
+            }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(102, 51, 153, 0.9), rgba(102, 51, 153, 0.9)), url('/api/placeholder/1920/600') center/cover;
+            padding: 4rem 2rem;
+            color: white;
+            text-align: center;
+        }
+
+            .hero h1 {
+                font-size: 2.5rem;
+                margin-bottom: 1.5rem;
+                animation: fadeInDown 1s ease;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+                max-width: 800px;
+                margin: 0 auto;
+                animation: fadeInUp 1s ease;
+            }
+
+        /* Content Sections */
+        .section {
+            padding: 4rem 2rem;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            font-size: 2rem;
+        }
+
+        /* Benefits Grid */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .benefit-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+            .benefit-card:hover {
+                transform: translateY(-5px);
+            }
+
+            .benefit-card h3 {
+                color: var(--primary);
+                margin-bottom: 1rem;
+            }
+
+        /* Services Section */
+        .services-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-item {
+            background: var(--light);
+            padding: 2rem;
+            border-radius: 8px;
+            transition: all 0.3s;
+        }
+
+            .service-item:hover {
+                background: var(--primary);
+                color: white;
+            }
+
+        /* Data Security Section */
+        .security-features {
+            background: var(--light);
+            padding: 3rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+
+        .security-list {
+            list-style: none;
+        }
+
+            .security-list li {
+                margin-bottom: 1rem;
+                padding-left: 2rem;
+                position: relative;
+            }
+
+                .security-list li::before {
+                    content: '♦';
+                    color: var(--primary);
+                    position: absolute;
+                    left: 0;
+                }
+
+        /* Footer */
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+        }
+
+        .footer-grid {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 3rem;
+        }
+
+        .footer-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--accent);
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+            .footer-links li {
+                margin-bottom: 0.8rem;
+            }
+
+            .footer-links a {
+                color: white;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+
+                .footer-links a:hover {
+                    color: var(--accent);
+                }
+
+        /* Animations */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+
+            .main-menu {
+                display: none;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .section {
+                padding: 2rem 1rem;
+            }
+
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="top-nav">
+        <div class="top-nav-links">
+            <a href="/WebSite/F1/Consul_Impre/about.html">About Us</a>
+            <a href="/WebSite/F1/Consul_Impre/clients.html">Our Clients</a>
+
+            <a href="/WebSite/F1/Consul_Impre/disclaimer.html">Disclaimer</a>
+            <a href="/WebSite/F1/Consul_Impre/contact.html">Contact</a>
+        </div>
+        <div class="social-icons">
+            <a href="www.instagram.com"><i class="fab fa-facebook-f"></i></a>
+            <a href="www.x.com"><i class="fab fa-twitter"></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <div class="logo">
+                <img src="/api/placeholder/180/60" alt="Company Logo">
+            </div>
+            <div class="main-menu">
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/index.html">PAYROLL OUTSOURCING</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/legal.html">LEGAL SUPPORT</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/hr.html">HUMAN RESOURCES</a>
+                </div>
+                <div class="main-menu-item">
+                    <a href="/WebSite/F1/Consul_Impre/compliance.html">STATUTORY COMPLIANCES</a>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- Legal Support Section -->
+    <section class="section" style="background: var(--light);">
+        <div class="section-container">
+            <h2 class="section-title">LEGAL SUPPORT OUTSOURCING</h2>
+            <div class="services-list">
+                <div class="service-item">
+                    <h3>Services</h3>
+                    <ul>
+                        <li>Litigation Support Services</li>
+                        <li>Legal Research & Advisory</li>
+                        <li>E-Discovery & Document Review</li>
+                        <li>Deposition Summaries</li>
+                        <li>Legal Transcription</li>
+                        <li>Document Management Services</li>
+                        <li>Corporate Due Diligence Services</li>
+                        <li>IT Services</li>
+                        <li>Transfer Pricing</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Governance Model</h3>
+                    <ul>
+                        <li>Separate Steering Committee/Team for each Client with Equal Representation from Client Side for Advisory Satisfaction</li>
+                        <li>Regular Review</li>
+                        <li>
+                            Sub Committees:
+                            <ul>
+                                <li>HR/Admin</li>
+                                <li>Production/Admin</li>
+                                <li>Finance</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Litigation Support Services</h3>
+                    <ul>
+                        <li>Complaints Management</li>
+                        <li>
+                            Legal Briefing:
+                            <ul>
+                                <li>Pre & Post Trial Brief</li>
+                                <li>Appellate Brief</li>
+                            </ul>
+                        </li>
+                        <li>Declaration Relief</li>
+                        <li>Writ Mandamus</li>
+                        <li>
+                            Motions:
+                            <ul>
+                                <li>Complaint Amendment</li>
+                                <li>Compel Evidence</li>
+                                <li>Preliminary Injunction/TRO</li>
+                            </ul>
+                        </li>
+                        <li>Motion In Limine</li>
+                        <li>Criminal/Civil/Corporate/Labor Law Motions & Brief</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Legal Research & Advisory</h3>
+                    <ul>
+                        <li>Comparison Survey</li>
+                        <li>Compliance Process Management</li>
+                        <li>Case Law Compilation & Analysis</li>
+                        <li>International Case Law Research</li>
+                        <li>Blue Sky Survey & Legislative Bill Tracking</li>
+                        <li>Intellectual Property Rights (IPR)</li>
+                        <li>Defamation Laws</li>
+                        <li>Anti Piracy Litigations</li>
+                        <li>Entertainment Law Adherence</li>
+                        <li>Corporate Law</li>
+                        <li>Employment & Labor Law Provisions</li>
+                        <li>Contract Law Provisions</li>
+                        <li>Memoranda of Law</li>
+                        <li>Factual Research on Corporate Financials</li>
+                        <li>Case Law & Legislative History</li>
+                        <li>Compendia/Abstracts for Publication</li>
+                        <li>Sec Filings & Research</li>
+                        <li>Large Scale Summations & Document Abstract</li>
+                        <li>Journals & Current Awareness</li>
+                        <li>Legal Opinions</li>
+                        <li>Jury Verdict & Settlement Information Updates</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Legal Drafting Services & Due Diligence</h3>
+                    <h4>Legal Drafting</h4>
+                    <ul>
+                        <li>Preparation of Summons & Complaints</li>
+                        <li>Appeal Papers/Notice/Briefs</li>
+                        <li>Request & Response</li>
+                        <li>Motions/Service Affidavits/Summaries</li>
+                        <li>Legal Briefs & Memoranda</li>
+                        <li>Petition for Certiorari</li>
+                        <li>Employment/Service Manuals</li>
+                        <li>License & Contracts</li>
+                        <li>Document Coding & Data Conversion</li>
+                    </ul>
+                    <h4>Due Diligence</h4>
+                    <ul>
+                        <li>Pre/Post Merger/Acquisition Diligence</li>
+                        <li>Integration Process</li>
+                        <li>Disclosure Schedules</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>IP Services / Transfer Pricing</h3>
+                    <h4>IP Services</h4>
+                    <ul>
+                        <li>Patent/Trademarks Search and Analysis</li>
+                        <li>Provisional/Non-Provisional Utility Patent/Trademark Process</li>
+                        <li>Patent/Trademark Prosecution Services</li>
+                        <li>Patent Analysis</li>
+                        <li>IP Portfolio Management/Research & Monitoring</li>
+                        <li>Copyright Services</li>
+                    </ul>
+                    <h4>Transfer Pricing</h4>
+                    <ul>
+                        <li>Transfer Pricing Study & Documentation</li>
+                        <li>Far & Economic Study & Analysis</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Document Review</h3>
+                    <ul>
+                        <li>Project Management Review</li>
+                        <li>High Value Document Review</li>
+                        <li>Responsiveness Analysis, Relevance & Privilege</li>
+                        <li>Tailor-Made Data as per Client Needs</li>
+                        <li>Manage/Control/Retrieve Data/Information/Updates</li>
+                        <li>Data Collection & Forensic</li>
+                        <li>Early Case Assessment</li>
+                        <li>Data Hosting/Review</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Deposition Summaries & Transcription</h3>
+                    <ul>
+                        <li>Patent Infringement</li>
+                        <li>Labor/Corporate/Contract Law Violation/Infringement</li>
+                        <li>Court Proceedings</li>
+                        <li>Licensing Process & Appeals</li>
+                        <li>Presentations</li>
+                        <li>Seminars & Conferences</li>
+                        <li>Deposition/Hearings & Summaries</li>
+                        <li>Evidence/Submission Process</li>
+                        <li>Arbitration/Settlement</li>
+                        <li>Expert Advisory</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Contract Management</h3>
+                    <ul>
+                        <li>Creation & Maintenance of Contract Database</li>
+                        <li>Contract Analysis/Drafting/Negotiation Guidelines</li>
+                        <li>Ongoing Contract Management/Review/Amendments</li>
+                        <li>Non-Disclosure Agreements</li>
+                        <li>Vendor/Service Contract Process</li>
+                        <li>Professional Employee Contract Process Management</li>
+                        <li>Media/Online/Telecom Service Agreement Process</li>
+                        <li>Sponsor/Grant Agreement</li>
+                        <li>Collaboration/Industry Specific Agreement Process</li>
+                        <li>Judicial Process Update</li>
+                        <li>Article of Incorporation</li>
+                        <li>Power of Attorney</li>
+                        <li>Lease/Licensing Agreement</li>
+                        <li>Evidentiary Document Process</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Service & Security Quality</h3>
+                    <ul>
+                        <li>Six Sigma & ISO Standards Driven Service Quality for Litigation Services from Filing, Inception to Closure</li>
+                        <li>Efficiency & Performance Metrics with Chosen Review Matrix</li>
+                        <li>Domain & File Service Security</li>
+                        <li>Data Integrity & Transfer Security</li>
+                        <li>Input/Output-Based Scheme</li>
+                    </ul>
+                </div>
+                <div class="service-item">
+                    <h3>Service Charges</h3>
+                    <ul>
+                        <li>Transaction/Advisory Service Fees (Based on Number of Transactions/Advisory Service)</li>
+                        <li>Pay Per Unit (Unit-Based Set Rate on Number/Hours of Advisory/Service)</li>
+                        <li>Project-Based/Flat Rate (Lump Sum Fees Based)</li>
+                        <li>Retainership-Based (Monthly/Yearly Fixed Rate)</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-section">
+                <h3>WHAT WE DO</h3>
+                <ul class="footer-links">
+                    <li><a href="#">Payroll Outsourcing</a></li>
+                    <li><a href="#">Legal Support Outsourcing</a></li>
+                    <li><a href="#">Human Resource Services</a></li>
+                    <li><a href="#">Statutory Compliance Management</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>CORPORATE HEAD OFFICE</h3>
+                <p>
+                    1 R.N.Mukherjee Road<br>
+                    "Martin Burn House"<br>
+                    3rd Floor, Room No. 324,<br>
+                    Kolkata - 700 001<br>
+                    Phone No. +91-33-4000-7427<br>
+                    Email: suggestion@tpconsultants.com
+                </p>
+            </div>
+            <div class="footer-section">
+                <h3>REGIONAL OFFICES</h3>
+                <ul class="footer-links">
+                    <li><a href="#">New Delhi</a></li>
+                    <li><a href="#">Mumbai</a></li>
+                    <li><a href="#">Nagpur</a></li>
+                    <li><a href="#">Ramagundan</a></li>
+                    <li><a href="#">Chennai</a></li>
+                    <li><a href="#">Hyderabad</a></li>
+                    <li><a href="#">Ahmedabad</a></li>
+                </ul>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Scroll animations for cards
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.benefit-car
