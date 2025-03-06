@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -294,18 +294,173 @@
             .benefits-grid {
                 grid-template-columns: 1fr;
             }
+            #contact-form {
+                max-width: 600px;
+                margin: 50px auto;
+                padding: 20px;
+                background: #fff;
+                border-radius: 10px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+                animation: fadeIn 1s ease-in-out;
+            }
+
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-20px);
+                }
+
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+
+            #contactForm {
+                display: flex;
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            label {
+                font-weight: bold;
+                color: #2c3e50;
+            }
+
+            input, textarea {
+                padding: 10px;
+                border: 1px solid #ddd;
+                border-radius: 5px;
+                font-size: 1rem;
+                transition: border-color 0.3s ease;
+            }
+
+                input:focus, textarea:focus {
+                    border-color: #3498db;
+                    outline: none;
+                }
+
+            textarea {
+                resize: vertical;
+                min-height: 150px;
+            }
+
+            button {
+                padding: 10px 20px;
+                background-color: #3498db;
+                color: #fff;
+                border: none;
+                border-radius: 5px;
+                font-size: 1rem;
+                cursor: pointer;
+                transition: background-color 0.3s ease;
+            }
+
+                button:hover {
+                    background-color: #2980b9;
+                }
+
+            /* Success Message Styles */
+            #successMessage {
+                display: none;
+                text-align: center;
+                padding: 20px;
+                background-color: #2ecc71;
+                color: #fff;
+                border-radius: 5px;
+                margin-top: 20px;
+                animation: fadeIn 0.5s ease-in-out;
+            }
         }
+        #contact-form {
+            padding: 40px;
+            background-color: #f8f9fa;
+            max-width: 600px;
+            margin: 50px auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+            #contact-form h2 {
+                text-align: center;
+                margin-bottom: 20px;
+                color: #222;
+            }
+
+            #contact-form form {
+                display: flex;
+                flex-direction: column;
+            }
+
+            #contact-form label {
+                margin-top: 10px;
+                font-weight: bold;
+            }
+
+            #contact-form input,
+            #contact-form textarea {
+                padding: 10px;
+                margin-top: 5px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+                font-size: 16px;
+            }
+
+            #contact-form textarea {
+                resize: vertical;
+                height: 120px;
+            }
+
+            #contact-form button {
+                margin-top: 20px;
+                padding: 12px;
+                background-color: #28a745;
+                color: white;
+                border: none;
+                border-radius: 5px;
+                font-size: 18px;
+                cursor: pointer;
+            }
+
+                #contact-form button:hover {
+                    background-color: #218838;
+                }
+
+        #successMessage {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #d4edda;
+            color: #155724;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+            font-size: 20px;
+            text-align: center;
+            z-index: 10;
+        }
+        #contact-form iframe {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+
     </style>
+
 </head>
 <body>
     <!-- Top Navigation -->
     <nav class="top-nav">
         <div class="top-nav-links">
-            <a href="/F1_Consul_demo/Consul_Impre/about.html">About Us</a>
-            <a href="/F1_Consul_demo/Consul_Impre/clients.html">Our Clients</a>
+            <a href="/WebSite/F1/Consul_Impre/about.html">About Us</a>
+            <a href="/WebSite/F1/Consul_Impre/clients.html">Our Clients</a>
 
-            <a href="/F1_Consul_demo/Consul_Impre/disclaimer.html">Disclaimer</a>
-            <a href="/F1_Consul_demo/Consul_Impre/contact.html">Contact</a>
+            <a href="/WebSite/F1/Consul_Impre/disclaimer.html">Disclaimer</a>
+            <a href="/WebSite/F1/Consul_Impre/contact.html">Contact</a>
         </div>
         <div class="social-icons">
             <a href="www.instagram.com"><i class="fab fa-facebook-f"></i></a>
@@ -321,16 +476,16 @@
             </div>
             <div class="main-menu">
                 <div class="main-menu-item">
-                    <a href="/F1_Consul_demo/Consul_Impre/index.html">PAYROLL OUTSOURCING</a>
+                    <a href="/WebSite/F1/Consul_Impre/index.html">PAYROLL OUTSOURCING</a>
                 </div>
                 <div class="main-menu-item">
-                    <a href="/F1_Consul_demo/Consul_Impre/legal.html">LEGAL SUPPORT</a>
+                    <a href="/WebSite/F1/Consul_Impre/legal.html">LEGAL SUPPORT</a>
                 </div>
                 <div class="main-menu-item">
-                    <a href="/F1_Consul_demo/Consul_Impre/hr.html">HUMAN RESOURCES</a>
+                    <a href="/WebSite/F1/Consul_Impre/hr.html">HUMAN RESOURCES</a>
                 </div>
                 <div class="main-menu-item">
-                    <a href="/F1_Consul_demo/Consul_Impre/compliance.html">STATUTORY COMPLIANCES</a>
+                    <a href="/WebSite/F1/Consul_Impre/compliance.html">STATUTORY COMPLIANCES</a>
                 </div>
 
             </div>
@@ -372,34 +527,44 @@
             <p>Ahmedabad 380015, Gujarat</p>
         </div>
     </section>
-<section class="section">
-        <div class="section-container">
-            <h2 class="section-title">3. Job Seeker (Career)</h2>
-            <p>Join us in shaping the future of work, one successful placement at a time.</p>
-            <form>
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email Address:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="contact">Contact Details:</label>
-                <input type="tel" id="contact" name="contact" required>
-                
-                <button type="submit">Upload CV</button>
-            </form>
-        </div>
-    </section>
+    <!-- Contact Form -->
+    <!--<section id="contact-form">
+        <h2>Contact Us</h2>
+        <form id="contactForm">
+            <label for="name">Full Name</label>
+            <input type="text" id="name" placeholder="Your Full Name" required>
 
-    <section class="section">
-        <div class="section-container">
-            <h2 class="section-title">4. Contact Us</h2>
-            <p><strong>Phone:</strong> +91 8810477307, +91 9818689940</p>
-            <p><strong>Email:</strong> <a href="mailto:recruiter@findix.in">recruiter@findix.in</a>, <a href="mailto:findixpvt@gmail.com">findixpvt@gmail.com</a></p>
-            <p><strong>Website:</strong> <a href="http://www.findix.in" target="_blank">www.findix.in</a></p>
-        </div>
-    </section>
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Your Email" required>
 
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" placeholder="Your Phone Number" required>
+
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Your Message" required></textarea>
+
+            <button type="submit">Submit</button>
+        </form>-->
+
+        <!-- Success Message -->
+        <!--<div id="successMessage">
+            🎉 Thank you! Your details have been sent successfully.
+        </div>
+    </section>-->
+    <section id="contact-form">
+        <h2>Contact Us</h2>
+
+        <!-- Google Form Embed -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdwm4kAwuw0P_sPPqIaci4sTs7f_tSDZq16yQYoxATT8_XL1A/viewform?embedded=true"
+                width="100%"
+                height="800"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0">
+            Loading…
+        </iframe>
+
+    </section>
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-grid">
@@ -439,6 +604,36 @@
     </footer>
 
     <script>
+        const form = document.getElementById('contactForm');
+        const successMessage = document.getElementById('successMessage');
+
+        form.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            const formData = new FormData();
+            formData.append('entry.2005620554', fullName);
+            formData.append('entry.1045781291', email);
+            formData.append('entry.1166974658', phone);
+            formData.append('entry.839337160', message);
+
+            fetch('https://docs.google.com/forms/u/0/d/e/1FAIpQLSdwm4kAwuw0P_sPPqIaci4sTs7f_tSDZq16yQYoxATT8_XL1A/formResponse', {
+                method: 'POST',
+                mode: 'no-cors',
+                body: formData
+            }).then(() => {
+                form.reset();
+                successMessage.style.display = 'block';
+                form.style.display = 'none';
+
+                setTimeout(() => {
+                    successMessage.style.display = 'none';
+                    form.style.display = 'flex';
+                }, 5000);
+            }).catch((error) => {
+                alert('Error submitting form. Please try again.');
+                console.error('Error!', error.message);
+            });
+        });
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
@@ -463,5 +658,4 @@
                 }
             });
         }, observerOptions);
-
-        document.querySelectorAll('.benefit-car
+    </script>
