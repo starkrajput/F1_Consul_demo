@@ -911,9 +911,10 @@
                         </select>
                     </div>
                     <div class="form-group">
-                        <label for="cv">Upload CV (PDF, DOC, DOCX)</label>
-                        <input type="file" class="file-input" id="cv" accept=".pdf,.doc,.docx" required>
-                    </div>
+    <label for="cv">Upload CV (PDF, DOC, DOCX)</label>
+    <input type="file" class="file-input" id="cv" accept=".pdf,.doc,.docx" required>
+    <small id="file-error" style="color: red; display: none;">File size must be less than 5MB.</small>
+</div>
                     <button type="submit" class="btn">Submit Application</button>
                 </form>
             </div>
@@ -1165,7 +1166,15 @@
                 // Here you would typically send the form data to a server
             });
         }
-
+document.getElementById("cv").addEventListener("change", function () {
+        const file = this.files[0]; // Get the selected file
+        if (file && file.size > 5 * 1024 * 1024) { // Check if file is larger than 5MB
+            document.getElementById("file-error").style.display = "block"; // Show error message
+            this.value = ""; // Clear the input
+        } else {
+            document.getElementById("file-error").style.display = "none"; // Hide error message
+        }
+    });
         // Testimonial Slider
         const testimonialCards = document.querySelectorAll('.testimonial-card');
         let currentTestimonial = 0;
