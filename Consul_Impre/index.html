@@ -21,7 +21,34 @@
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
         }
+/* Add this to your existing CSS */
+p {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    text-align: justify; /* Add this to justify all paragraph text */
+    hyphens: auto; /* Optional: Adds hyphenation for better justification */
+}
 
+/* Make sure these specific text elements are also justified */
+.hero-subtitle, 
+.about-text p, 
+.mission-card p, 
+.vision-card p,
+.feature-card p,
+.service-text,
+.industry-card p,
+.testimonial-content p,
+.contact-details p {
+    text-align: justify;
+}
+
+/* For better presentation on small screens, you might want to disable 
+   justification on very narrow viewports */
+@media (max-width: 480px) {
+    p {
+        text-align: left; /* Revert to left alignment on small screens for readability */
+    }
+}
         * {
             margin: 0;
             padding: 0;
@@ -873,7 +900,7 @@
                 transform: translateX(0);
             }
         }
-
+   
         @media (max-width: 576px) {
             .hero-title {
                 font-size: 2rem;
