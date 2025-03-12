@@ -377,11 +377,11 @@
                  padding-top: 60px;
              }
 
-             .hero-content {
-                 max-width: 800px;
-                 margin: 0 auto;
-                 animation: fadeInUp 1s ease;
-             }
+        .hero-content {
+            max-width: 1105px;
+            margin: 0 auto;
+            animation: fadeInUp 1s ease;
+        }
 
              .hero-title {
                  font-size: 3.5rem;
@@ -1195,7 +1195,7 @@
             border-right: 3px solid var(--secondary);
             margin: 0 auto;
             width: 0;
-            animation: typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
+            animation: typing 3s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
         }
 
         .typing-animation-subtitle {
@@ -1204,28 +1204,26 @@
             white-space: nowrap;
             opacity: 0;
             width: 0;
-            animation: typing 3.5s steps(60, end) forwards 3.5s, fadeIn 1s forwards 3.5s;
+            animation: typing 3s steps(60, end) forwards 3s, fadeIn 1s forwards 3s;
         }
 
-        /* Typing effect */
         @keyframes typing {
             from {
-                width: 0
+                width: 0;
             }
 
             to {
-                width: 100%
+                width: 100%;
             }
         }
 
-        /* Cursor blinking effect */
         @keyframes blink-caret {
             from, to {
-                border-color: transparent
+                border-color: transparent;
             }
 
             50% {
-                border-color: var(--secondary)
+                border-color: var(--secondary);
             }
         }
 
@@ -1238,21 +1236,6 @@
                 opacity: 1;
             }
         }
-
-        /* Delay buttons appearance */
-        .hero-buttons {
-            opacity: 0;
-            transform: translateY(20px);
-            animation: fadeInButtons 1s ease forwards 7s;
-        }
-
-        @keyframes fadeInButtons {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        /* Add this JavaScript to activate section titles when they come into view */
     </style>
 </head>
 <body>
@@ -1280,10 +1263,10 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="hero-content">
-                <h1 class="hero-title">
+                <h1 class="hero-title" style="text-align: center; white-space: normal; overflow: visible; word-wrap: break-word;">
                     <span class="typing-animation">Where Talent Meets Opportunity</span>
                 </h1>
-                <p class="hero-subtitle">
+                <p class="hero-subtitle" style="text-align: center; white-space: normal; overflow: visible; word-wrap: break-word;">
                     <span class="typing-animation-subtitle">Redefining the way businesses connect with exceptional talent through innovative, data-driven solutions.</span>
                 </p>
                 <div class="hero-buttons">
@@ -1482,7 +1465,7 @@
                     </div>
                     <div class="form-group">
                         <label for="cv">Upload CV (PDF, DOC, DOCX)</label>
-                        <input type="file" class="file-input" id="cv" accept=".pdf,.doc,.docx">
+                        <input type="file" style="text-align:center;" class="file-input" id="cv" accept=".pdf,.doc,.docx">
                         <small id="file-error" style="color: red; display: none;">File size must be less than 1MB.</small>
                     </div>
                     <button type="submit" class="btn">Submit Application</button>
@@ -1501,7 +1484,8 @@
                     <div class="contact-details">
                         <p><i class="fas fa-phone"></i> <span>+91 8810477307</span></p>
                         <p><i class="fas fa-phone"></i> <span>+91 9818689940</span></p>
-                        <p><i class="fas fa-envelope"></i> <span>recruiter@findix.in, findixpvt@gmail.com</span></p>
+                        <p><i class="fas fa-envelope"></i> <span>recruiter@findix.in</span></p>
+                        <p><i class="fas fa-envelope"></i> <span>findixpvt@gmail.com</span></p>
                         <p><i class="fas fa-clock"></i> <span>Monday - Friday: 9:00 AM - 6:00 PM</span></p>
                     </div>
 
@@ -1846,8 +1830,8 @@
             subtitle.style.animation = 'none';
 
             setTimeout(function () {
-                title.style.animation = 'typing 3.5s steps(40, end) forwards, blink-caret 0.75s step-end infinite';
-                subtitle.style.animation = 'typing 3.5s steps(60, end) forwards 3.5s, fadeIn 1s forwards 3.5s';
+                title.style.animation = 'typing 1s steps(40, end) forwards, blink-caret 0.5s step-end infinite';
+                subtitle.style.animation = 'typing 1s steps(60, end) forwards 1s, fadeIn 1s forwards 0.5s';
             }, 10);
         });
         // Security :
