@@ -331,7 +331,19 @@
             margin-bottom: 1rem;
             color: var(--primary);
         }
+        /* Make the last card span 3 columns only on larger screens */
+        @media (min-width: 900px) {
+            .feature-card:nth-child(4) {
+                grid-column: span 3; /* Takes full width in a row */
+            }
+        }
 
+        /* Ensure proper vertical alignment on smaller screens */
+        @media (max-width: 899px) {
+            .feature-card:nth-child(4) {
+                grid-column: span 1; /* Default behavior for mobile */
+            }
+        }
         /* Services Section */
         .services-intro {
             max-width: 800px;
@@ -373,20 +385,23 @@
             margin-bottom: 1rem;
             color: var(--primary);
         }
-
+       
         .service-text {
             margin-bottom: 1.5rem;
         }
 
         /* Industries Section */
+        /* Industries Section */
         .industries {
             background-color: #f5f7f9;
+            padding: 2rem;
         }
 
         .industries-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Ensures alignment */
+            gap: 1.5rem;
         }
 
         .industry-card {
@@ -396,6 +411,9 @@
             box-shadow: var(--shadow);
             transition: var(--transition);
             text-align: center;
+            flex: 1 1 calc(25% - 1.5rem); /* Responsive grid layout */
+            min-width: 250px; /* Ensures proper wrapping */
+            max-width: 300px; /* Controls max width */
         }
 
             .industry-card:hover {
@@ -413,6 +431,14 @@
             font-size: 1.3rem;
             margin-bottom: 0.5rem;
             color: var(--primary);
+        }
+
+        /* Ensure the last card takes up remaining space */
+        @media (min-width: 900px) {
+            .industry-card:last-child {
+                flex-grow: 2; /* Expands to fill remaining space */
+                max-width: 100%;
+            }
         }
 
         /* Career Section */
@@ -478,12 +504,15 @@
         }
 
         .contact-container {
-            display: grid;
+           /*
+               display: grid;
+           */ display: inline;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
         }
 
         .contact-info {
+            
             background-color: white;
             padding: 2rem;
             border-radius: 8px;
