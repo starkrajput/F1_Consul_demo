@@ -1191,7 +1191,8 @@
         .typing-animation {
             display: inline-block;
             overflow: hidden;
-            white-space: nowrap; /* Keep text in one line during typing */
+            white-space: normal; /* Keep text in one line during typing */
+            word-wrap: break-word;
             border-right: 3px solid var(--secondary); /* Cursor effect */
             margin: 0 auto;
             width: 0;
