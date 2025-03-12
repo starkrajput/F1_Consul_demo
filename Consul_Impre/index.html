@@ -964,6 +964,140 @@
                      grid-template-columns: 1fr;
                  }
              }
+        /* Enhanced Animations and Transitions */
+
+        /* Improved Reveal Animation System */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1); /* Premium smooth easing */
+            will-change: transform, opacity; /* Performance optimization */
+        }
+
+            .reveal.active {
+                opacity: 1;
+                transform: translateY(0);
+            }
+
+            /* Staggered entrance for multiple elements */
+            .reveal:nth-child(2) {
+                transition-delay: 0.1s;
+            }
+
+            .reveal:nth-child(3) {
+                transition-delay: 0.2s;
+            }
+
+            .reveal:nth-child(4) {
+                transition-delay: 0.3s;
+            }
+
+            .reveal:nth-child(5) {
+                transition-delay: 0.4s;
+            }
+
+        /* Image specific animations */
+        .about-image, .service-img, .testimonial-img {
+            overflow: hidden;
+            transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s ease;
+        }
+
+            .about-image img, .service-img img {
+                transition: transform 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+                will-change: transform;
+            }
+
+            .about-image:hover img, .service-img:hover img {
+                transform: scale(1.05);
+            }
+
+        /* Premium card hover effects */
+        .feature-card, .service-card, .industry-card, .mission-card, .vision-card {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+            will-change: transform, box-shadow;
+        }
+
+            .feature-card:hover, .service-card:hover, .industry-card:hover, .mission-card:hover, .vision-card:hover {
+                transform: translateY(-10px);
+                box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
+            }
+
+        /* Icon animations */
+        .feature-icon, .industry-icon {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+        }
+
+        .feature-card:hover .feature-icon, .industry-card:hover .industry-icon {
+            transform: translateY(-5px) scale(1.1);
+            color: var(--accent);
+        }
+
+        /* Enhanced hero animations */
+        .hero-content {
+            animation: fadeInUpPremium 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        @keyframes fadeInUpPremium {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Button animations */
+        .btn {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1), transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+            .btn:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            }
+
+            .btn:after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: rgba(255, 255, 255, 0.2);
+                transform: translateX(-100%);
+                transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+            }
+
+            .btn:hover:after {
+                transform: translateX(100%);
+            }
+
+        /* Text link animations */
+        .nav-menu a, .footer-links a {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+            .nav-menu a::after {
+                transition: width 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+            }
+
+        /* Section title animation */
+        .section-title::after {
+            transition: width 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+            width: 0;
+        }
+
+        .section-title.active::after {
+            width: 80px;
+        }
+
+        /* Add this JavaScript to activate section titles when they come into view */
     </style>
 </head>
 <body>
@@ -1475,7 +1609,74 @@
             showTestimonial(0);
             setInterval(nextTestimonial, 5000); // Change testimonial every 5 seconds
         }
+        // Enhanced reveal on scroll functionality
+        document.addEventListener('DOMContentLoaded', function () {
+            // Reveal elements on scroll
+            function revealOnScroll() {
+                const reveals = document.querySelectorAll('.reveal');
+                const sectionTitles = document.querySelectorAll('.section-title');
 
+                // Handle regular reveal elements
+                reveals.forEach(element => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = element.getBoundingClientRect().top;
+                    const elementVisible = 150;
+
+                    if (elementTop < windowHeight - elementVisible) {
+                        element.classList.add('active');
+                    }
+                });
+
+                // Handle section titles separately for their line animation
+                sectionTitles.forEach(title => {
+                    const windowHeight = window.innerHeight;
+                    const elementTop = title.getBoundingClientRect().top;
+                    const elementVisible = 150;
+
+                    if (elementTop < windowHeight - elementVisible) {
+                        title.classList.add('active');
+                    }
+                });
+            }
+
+            // Initial check on page load
+            revealOnScroll();
+
+            // Check on scroll
+            window.addEventListener('scroll', revealOnScroll);
+
+            // Add subtle parallax effect to hero section
+            const hero = document.querySelector('.hero');
+            if (hero) {
+                window.addEventListener('scroll', function () {
+                    const scroll = window.pageYOffset;
+                    hero.style.backgroundPosition = `center ${50 + (scroll * 0.1)}%`;
+                });
+            }
+
+            // Add staggered entrance for feature cards
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.style.transitionDelay = `${0.1 * index}s`;
+            });
+
+            // Add staggered entrance for service cards
+            const serviceCards = document.querySelectorAll('.service-card');
+            serviceCards.forEach((card, index) => {
+                card.style.transitionDelay = `${0.1 * index}s`;
+            });
+
+            // Add image hover effects
+            const images = document.querySelectorAll('.about-image img, .service-img img');
+            images.forEach(img => {
+                img.addEventListener('mouseenter', function () {
+                    this.style.transform = 'scale(1.05)';
+                });
+                img.addEventListener('mouseleave', function () {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+        });
         // Security :
         document.addEventListener("contextmenu", function (e) {
             e.preventDefault();
