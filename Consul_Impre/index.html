@@ -21,68 +21,85 @@
                  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                  --transition: all 0.3s ease;
              }
-        /* Base justification for all paragraphs */
+        /* Base justification for all paragraphs with no extra spaces */
         p {
             font-size: 1.05rem;
             line-height: 1.7;
             text-align: justify;
-            hyphens: none; /* Prevent hyphenation */
+            hyphens: none;
+            word-spacing: normal; /* Control word spacing */
         }
 
         /* Specific sections that need justification */
         .services-intro p,
-        .text-center.reveal,
-        .contact-details p {
-            text-align: justify;
+        .text-center.reveal {
+            text-align: justify !important;
+            word-spacing: normal;
         }
 
         /* Fix for the "Why Choose Us" section text */
         .text-center.reveal {
-            text-align: justify !important; /* Override any other styles */
             margin: 0 auto 4rem;
             max-width: 800px;
         }
 
-        /* Contact details specific styling - remove extra space */
+        /* Contact details styling - eliminate extra spaces */
         .contact-details p {
             display: flex;
             align-items: flex-start;
-            gap: 1rem;
+            gap: 0.5rem; /* Reduced gap */
             margin-bottom: 1rem;
-            text-align: justify;
+            text-align: left; /* Left align works better for contact details */
+            white-space: normal; /* Allow normal wrapping */
         }
 
             .contact-details p i {
-                flex-shrink: 0; /* Prevent icon from shrinking */
+                flex-shrink: 0;
+                width: 20px; /* Fixed width for icons */
+                text-align: center;
             }
 
             .contact-details p span {
-                flex-grow: 1; /* Let the text take up remaining space */
+                flex: 1;
             }
 
-        /* Ensure proper alignment on mobile */
+        /* Mobile specific fixes */
         @media (max-width: 768px) {
-            .contact-details p {
-                text-align: justify;
-                display: flex; /* Maintain flex display even on mobile */
-            }
-
-            /* Keep justification on all paragraphs for mobile */
+            /* Keep all general paragraphs justified */
             p,
             .services-intro p,
             .text-center.reveal {
                 text-align: justify;
             }
+
+            /* Contact details specific mobile styling */
+            .contact-details p {
+                flex-wrap: nowrap; /* Prevent wrapping */
+                white-space: normal;
+                overflow: visible;
+            }
+
+                .contact-details p span {
+                    white-space: normal; /* Allow text to wrap naturally */
+                    word-break: break-word; /* Break long words if needed */
+                }
         }
 
-        /* Only disable justification on very small screens if needed */
+        /* For very small screens */
         @media (max-width: 480px) {
-            /* 
-    Uncomment this if you prefer left alignment on very small screens
-    p {
-        text-align: left;
-    }
-    */
+            .contact-details p {
+                display: flex;
+                flex-direction: row; /* Keep items in a row */
+                align-items: flex-start;
+            }
+
+                .contact-details p i {
+                    margin-top: 3px; /* Better vertical alignment with text */
+                }
+
+                .contact-details p span {
+                    padding-top: 0;
+                }
         }
              * {
                  margin: 0;
@@ -1041,10 +1058,10 @@
                     <h3 class="feature-title">End-to-End Recruitment Solutions</h3>
                     <p>From sourcing and screening to onboarding, we handle the entire hiring process, allowing you to focus on your core business operations.</p>
                 </div>
-                <div class="feature-card reveal">
+                <div class="feature-card reveal" >
                     <div class="feature-icon"><i class="fas fa-expand-arrows-alt"></i></div>
                     <h3 class="feature-title">Flexible Staffing Options</h3>
-                    <p>Whether you need permanent, contract, or temporary staffing, we offer scalable solutions tailored to your business requirements.</p>
+                    <p style="text-align: center;">Whether you need permanent, contract, or temporary staffing, we offer scalable solutions tailored to your business requirements.</p>
                 </div>
             </div>
         </div>
