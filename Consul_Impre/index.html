@@ -455,6 +455,7 @@
         .career-form {
             max-width: 600px;
             margin: 0 auto;
+
             background-color: white;
             padding: 2rem;
             border-radius: 8px;
@@ -1397,6 +1398,12 @@
             showTestimonial(0);
             setInterval(nextTestimonial, 5000); // Change testimonial every 5 seconds
         }
+
+        // Security :
+        document.addEventListener("contextmenu", function (e) {
+            e.preventDefault();
+        });
+
     </script>
 
     <!-- Additional styles to improve text visibility and adjust colors -->
