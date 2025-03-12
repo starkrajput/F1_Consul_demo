@@ -21,6 +21,97 @@
                  --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
                  --transition: all 0.3s ease;
              }
+        /* Premium Dark Blue Gradient Hover Effects */
+
+        /* Update color variables with darker blue shades for hover states */
+        :root {
+            /* Existing colors */
+            --primary: #1a2a3a;
+            --secondary: #2980b9;
+            --accent: #c0392b;
+            /* New premium dark blue hover colors */
+            --dark-blue-1: #0f172a; /* Very dark blue */
+            --dark-blue-2: #1e3a5f; /* Dark navy blue */
+            --dark-blue-3: #1e40af; /* Rich blue */
+            --premium-gradient: linear-gradient(135deg, var(--dark-blue-1), var(--dark-blue-2), var(--dark-blue-3));
+            --premium-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+        }
+
+        /* Card hover effects with premium dark blue */
+        .feature-card:hover,
+        .service-card:hover,
+        .industry-card:hover,
+        .mission-card:hover,
+        .vision-card:hover {
+            background-image: var(--premium-gradient);
+            color: white;
+            transform: translateY(-10px);
+            box-shadow: var(--premium-shadow);
+            border: none;
+        }
+
+            /* Adjust text color on hover for better contrast */
+            .feature-card:hover h3,
+            .service-card:hover h3,
+            .industry-card:hover h3,
+            .mission-card:hover h3,
+            .vision-card:hover h3,
+            .feature-card:hover p,
+            .service-card:hover p,
+            .industry-card:hover p,
+            .mission-card:hover p,
+            .vision-card:hover p {
+                color: white;
+            }
+
+            /* Icon color change on hover */
+            .feature-card:hover .feature-icon,
+            .industry-card:hover .industry-icon {
+                color: #60a5fa; /* Light blue that stands out against dark bg */
+                transform: translateY(-5px) scale(1.1);
+            }
+
+        /* Button hover effects with premium dark blue */
+        .btn:hover {
+            background-image: var(--premium-gradient);
+            border-color: transparent;
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: var(--premium-shadow);
+        }
+
+        /* Nav menu hover effects */
+        .nav-menu a:hover {
+            color: #60a5fa; /* Light blue for contrast */
+        }
+
+            .nav-menu a:hover::after {
+                background-color: #60a5fa;
+            }
+
+        /* Footer links hover */
+        .footer-links a:hover {
+            color: #60a5fa;
+            transform: translateX(5px);
+        }
+
+        /* Back to top button hover */
+        .back-to-top:hover {
+            background-image: var(--premium-gradient);
+        }
+
+        /* Add subtle gradient hover to contact and form elements */
+        .contact-info:hover,
+        #contact-form:hover {
+            background-image: linear-gradient(to bottom right, #ffffff, #f8fafc);
+            box-shadow: var(--premium-shadow);
+        }
+
+        /* Add transition for all hover effects */
+        .feature-card, .service-card, .industry-card, .mission-card, .vision-card,
+        .btn, .nav-menu a, .footer-links a, .back-to-top, .contact-info, #contact-form {
+            transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
         /* Base justification for all paragraphs with no extra spaces */
         p {
             font-size: 1.05rem;
