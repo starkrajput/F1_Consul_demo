@@ -1192,7 +1192,7 @@
             display: inline-block;
             overflow: hidden;
             white-space: nowrap; /* Keep text in one line during typing */
-            border-right: 1px solid var(--secondary);
+            border-right: 3px solid var(--secondary); /* Cursor effect */
             margin: 0 auto;
             width: 0;
             animation: typing 1s steps(40, end) forwards, blink-caret 0.5s step-end infinite;
@@ -1210,7 +1210,7 @@
 
         @keyframes typing {
             from {
-                width: 0;
+                width: 0; /* Start with no width */
             }
 
             to {
@@ -1220,21 +1220,21 @@
 
         @keyframes blink-caret {
             from, to {
-                border-color: transparent;
+                border-color: transparent; /* Hide cursor */
             }
 
             50% {
-                border-color: var(--secondary);
+                border-color: var(--secondary); /* Show cursor */
             }
         }
 
         @keyframes fadeIn {
             from {
-                opacity: 0;
+                opacity: 0; /* Start invisible */
             }
 
             to {
-                opacity: 1;
+                opacity: 1; /* Fade in */
             }
         }
     </style>
@@ -1832,7 +1832,7 @@
 
             setTimeout(function () {
                 title.style.animation = 'typing 1s steps(40, end) forwards, blink-caret 0.5s step-end infinite';
-                subtitle.style.animation = 'typing 1s steps(60, end) forwards 1s, fadeIn 1s forwards 0.5s';
+                subtitle.style.animation = 'typing 1s steps(60, end) forwards 1s, fadeIn 1s forwards 1s';
             }, 10);
         });
         // Security :
