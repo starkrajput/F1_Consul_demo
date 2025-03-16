@@ -7,6 +7,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
     <style>
+        @media (max-width: 768px) {
+            /* Keep all general paragraphs justified */
+            p,
+            .services-intro p,
+            .text-center.reveal {
+                text-align: justify;
+                word-spacing: -0.05em; /* Maintain consistent spacing on mobile */
+                text-justify: inter-word;
+            }
+
+            /* Contact details specific mobile styling */
+            .contact-details p {
+                flex-wrap: nowrap; /* Prevent wrapping */
+                white-space: normal;
+                overflow: visible;
+                word-spacing: normal; /* Default spacing for contact details */
+            }
+
+                .contact-details p span {
+                    white-space: normal; /* Allow text to wrap naturally */
+                    word-break: break-word; /* Break long words if needed */
+                }
+        }
+
+        /* For very small screens */
+        @media (max-width: 480px) {
+            p {
+                word-spacing: -0.03em; /* Slightly less tight spacing on small screens */
+            }
+
+            .contact-details p {
+                display: flex;
+                flex-direction: row; /* Keep items in a row */
+                align-items: flex-start;
+            }
+
+                .contact-details p i {
+                    margin-top: 3px; /* Better vertical alignment with text */
+                }
+
+                .contact-details p span {
+                    padding-top: 0;
+                }
+        }
         /* Reset and Base Styles */
         :root {
             --primary: #1a2a3a; /* Darkened from #2c3e50 */
@@ -1240,135 +1284,6 @@
                 opacity: 1; /* Fade in */
             }
         }
-        /* Enhanced Text Justification Styles */
-
-        /* Base text justification for all paragraphs */
-        p {
-            font-size: 1.05rem;
-            line-height: 1.7;
-            text-align: justify;
-            text-justify: inter-word; /* Improves spacing between words */
-            hyphens: auto; /* Enable automatic hyphenation */
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-            word-break: normal; /* Let words break normally */
-            word-spacing: normal;
-            overflow-wrap: break-word; /* Prevent overflow */
-        }
-
-        /* Specific sections that need special justification treatment */
-        .services-intro p,
-        .about-text p,
-        .mission-card p,
-        .vision-card p,
-        .feature-card p,
-        .service-text,
-        .testimonial-content,
-        .text-center.reveal {
-            text-align: justify !important;
-            text-justify: inter-word;
-            hyphens: auto;
-            -webkit-hyphens: auto;
-            -ms-hyphens: auto;
-        }
-
-        /* Hero section text justification */
-        .hero-subtitle {
-            text-align: justify;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            text-justify: inter-word;
-        }
-
-        /* Prevent hyphenation in headings, titles and specific text that shouldn't be hyphenated */
-        h1, h2, h3, h4, h5, h6,
-        .logo,
-        .nav-menu a,
-        .btn,
-        .feature-title,
-        .service-title,
-        .industry-title,
-        .author-info h4,
-        .author-info p {
-            hyphens: none;
-            -webkit-hyphens: none;
-            -ms-hyphens: none;
-        }
-
-        /* Contact details styling - special case for alignment */
-        .contact-details p {
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-            text-align: left; /* Left alignment works better for contact info */
-            hyphens: none;
-            -webkit-hyphens: none;
-            -ms-hyphens: none;
-        }
-
-            .contact-details p i {
-                flex-shrink: 0;
-                width: 20px;
-                text-align: center;
-            }
-
-            .contact-details p span {
-                flex: 1;
-                word-break: normal;
-            }
-
-        /* Form labels and inputs - keep left aligned */
-        .form-group label,
-        .form-control {
-            text-align: left;
-            hyphens: none;
-            -webkit-hyphens: none;
-            -ms-hyphens: none;
-        }
-
-        /* Footer text justification */
-        .footer-section p {
-            text-align: justify;
-            text-justify: inter-word;
-        }
-
-        /* Responsive justification for different screen sizes */
-        @media (max-width: 768px) {
-            /* Maintain justification on mobile */
-            p,
-            .services-intro p,
-            .about-text p,
-            .mission-card p,
-            .vision-card p,
-            .feature-card p,
-            .service-text,
-            .text-center.reveal {
-                text-align: justify;
-                text-justify: inter-word;
-                hyphens: auto;
-                -webkit-hyphens: auto;
-                -ms-hyphens: auto;
-            }
-
-            /* Limit hyphenation on very small screens for readability */
-            @media (max-width: 480px) {
-                p {
-                    hyphens: manual; /* Fewer hyphens on small screens */
-                    -webkit-hyphens: manual;
-                    -ms-hyphens: manual;
-                }
-            }
-        }
-
-        /* Add reading direction for proper justification in different languages */
-        html, body {
-            direction: ltr; /* Left to right text direction */
-        }
-
-        /* Ensure animation text is properly justified */
-     
     </style>
 </head>
 <body>
@@ -1470,7 +1385,7 @@
                 <div class="feature-card reveal">
                     <div class="feature-icon"><i class="fas fa-expand-arrows-alt"></i></div>
                     <h3 class="feature-title">Flexible Staffing Options</h3>
-                    <p style="text-align: center;">Whether you need permanent, contract, or temporary staffing, we offer scalable solutions tailored to your business requirements.</p>
+                    <p >Whether you need permanent, contract, or temporary staffing, we offer scalable solutions tailored to your business requirements.</p>
                 </div>
             </div>
         </div>
