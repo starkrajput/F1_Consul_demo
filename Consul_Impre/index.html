@@ -1284,6 +1284,18 @@
                 opacity: 1; /* Fade in */
             }
         }
+       @media only screen and (max-width: 600px) {
+    #findix-intro-1,
+    #findix-quote-1,
+    #findix-mission-1 {
+      text-align: justify !important;
+      word-spacing: 0 !important;
+      -webkit-text-justify: inter-word !important;
+      text-justify: inter-word !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+  }
     </style>
 </head>
 <body>
@@ -1334,9 +1346,14 @@
                 <h3>Redefining Talent Acquisition</h3>
                     <p>Welcome to Findix Private Limited, where we are redefining the way talent meets opportunity. At Findix Private Limited, we understand the pivotal role that the right talent plays in driving organizational success. That's why we have embarked on a mission to connect top-tier talent with innovative companies, fostering growth and prosperity on both sides.</p>
                     <br>
+              <!--
                    <p style="text-align: justify; word-spacing: 0; margin: 0; padding: 0; -webkit-text-justify: inter-word; text-justify: inter-word;">
   Founded by a team of industry veterans, Findix Private Limited brings a fresh approach to recruitment, blending cutting-edge technology with a personalized touch. Our platform harnesses the power of AI-driven matchmaking algorithms to streamline the hiring process, ensuring efficient, precise, and tailored matches.
-</p>     <br>
+</p>  -->
+              <p id="findix-intro-1" style="text-align: left; margin: 0; padding: 0;">
+  Founded by a team of industry veterans, Findix Private Limited brings a fresh approach to recruitment, blending cutting-edge technology with a personalized touch. Our platform harnesses the power of AI-driven matchmaking algorithms to streamline the hiring process, ensuring efficient, precise, and tailored matches.
+</p>
+              <br>
                     <p>We are more than just a platform; we are your strategic partner in talent acquisition. Our team of dedicated professionals is committed to understanding your unique needs and culture, enabling us to deliver candidates who not only meet the skill requirements but also align with your organization's values and vision.</p>
     <!--
               <div class="about-content">
@@ -1355,11 +1372,11 @@
                     <br>
                     <p>At Findix, we believe that great talent is the foundation of successful organizations. Our mission is to bridge the gap between employers and qualified professionals, creating meaningful connections that foster innovation, drive growth, and shape the future of work.</p>
                   -->
-                  <p style="text-align: justify; word-spacing: 0; margin: 0; padding: 0; -webkit-text-justify: inter-word; text-justify: inter-word;">
+                <p id="findix-quote-1" style="text-align: left; margin: 0; padding: 0;">
   "Empowering organizations by connecting them with exceptional talent to drive innovation and growth."
 </p>
 <br>
-<p style="text-align: justify; word-spacing: 0; margin: 0; padding: 0; -webkit-text-justify: inter-word; text-justify: inter-word;">
+<p id="findix-mission-1" style="text-align: left; margin: 0; padding: 0;">
   At Findix, we believe that great talent is the foundation of successful organizations. Our mission is to bridge the gap between employers and qualified professionals, creating meaningful connections that foster innovation, drive growth, and shape the future of work.
 </p>
                 </div>
